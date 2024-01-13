@@ -4,11 +4,12 @@
 import cmd
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     """class for hbnb command line"""
-    class_names = ['BaseModel']
+    class_names = ['BaseModel', 'User']
     __all_objects = []
     prompt = '(hbnb)'
 
