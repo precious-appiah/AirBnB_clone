@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This is the base model of our AirBnB Project"""
 
 from datetime import datetime
