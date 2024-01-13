@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """this is a console program"""
 
-
 import cmd
-from models.base_model import BaseModel
 from models import storage
+from models.base_model import BaseModel, Demo
 
 
 class HBNBCommand(cmd.Cmd):
     """class for hbnb command line"""
-    """quit and EOF"""
-    """help, prompt, """
     class_names = ['BaseModel']
+    __all_objects = []
     prompt = '(hbnb)'
 
     def do_quit(self, line):
@@ -48,8 +46,46 @@ class HBNBCommand(cmd.Cmd):
             print('** instance id missing **')
         else:
             name = line_arr[0] + '.' + line_arr[1]
-            my_new_model = BaseModel(**storage.reload()[name])
-            print(type(my_new_model))
+            if name in storage.reload():
+                my_new_model = globals()[line_arr[0]](**storage.reload()[name])
+                print(my_new_model)
+            else:
+                print("** no instance found **")
+
+    def do_destroy(self, line):
+        """Deletes an instance"""
+        line_arr = line.split(' ')
+        if len(line) == 0:
+            print('** class name missing **')
+        elif line_arr[0] not in self.class_names:
+            print("** class doesn't exist **")
+        elif len(line_arr) != 2:
+            print('** instance id missing **')
+        else:
+            name = line_arr[0] + '.' + line_arr[1]
+            if name in storage.reload():
+                del storage.reload()[name]
+                storage.save()
+            else:
+                print("** no instance found **")
+
+    def do_all(self, line):
+        """Prints string represantation of all instances"""
+        if line:
+            if line in self.class_names:
+                for key, value in storage.reload().items():
+                    if key.split('.')[0] == line:
+                        object = str(globals()[line](**value))
+                        self.__all_objects.append(object)
+                print(self.__all_objects)
+            else:
+                print("** class doesn't exist **")
+        else:
+            for key, value in storage.reload().items():
+                object = str(globals()[key.split('.')[0]](**value))
+                self.__all_objects.append(object)
+            print(self.__all_objects)
+        self.__all_objects = []
 
 
 if __name__ == '__main__':
