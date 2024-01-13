@@ -20,7 +20,7 @@ class FileStorage():
     def save(self):
         """serializes our objects dict to a json str"""
         with open(self.__path, 'w', encoding="utf-8") as f:
-            json.dump(self.__objects, f, indent=2)
+            json.dump(self.__objects, f)
 
     def reload(self):
         """Reloads objects from json file"""
