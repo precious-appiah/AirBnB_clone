@@ -4,6 +4,7 @@
 
 from models.base_model import BaseModel
 from datetime import datetime
+import time
 import unittest
 
 
@@ -34,6 +35,12 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(obj.updated_at,
                          datetime.strptime(obj_dict['updated_at'],
                                             '%Y-%m-%dT%H:%M:%S.%f'))
+    
+    def test_save(self):
+        """Tests the save method of the BaseModel"""
+        obj = BaseModel()
+        self.assertGreater(datetime.strptime(datetime.now().isoformat(), '%Y-%m-%dT%H:%M:%S.%f'),
+                           datetime.strptime(obj.updated_at, '%Y-%m-%dT%H:%M:%S.%f'))
 
 
 if __name__ == "__main__":
