@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# user class def
 """User definition module"""
 from models.base_model import BaseModel
 
