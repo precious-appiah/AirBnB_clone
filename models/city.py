@@ -8,6 +8,8 @@ from models.base_model import BaseModel
 
 class City(BaseModel):
     """class City which inherits BaseModel"""
+    state_id = ''
+
     def __init__(self):
         """initialization"""
 
