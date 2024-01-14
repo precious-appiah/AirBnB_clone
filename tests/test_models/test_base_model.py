@@ -3,7 +3,6 @@
 """Test base model module using unittesting"""
 
 from models.base_model import BaseModel
-import datetime
 import unittest
 
 
@@ -16,8 +15,8 @@ class TestBaseModel(unittest.TestCase):
         obj = BaseModel()
 
         self.assertTrue(isinstance(obj.id, str))
-        self.assertTrue(isinstance(obj.created_at, datetime.datetime))
-        self.assertTrue(isinstance(obj.updated_at, datetime.datetime))
+        self.assertTrue(isinstance(obj.created_at, str))
+        self.assertTrue(isinstance(obj.updated_at, str))
 
 
 if __name__ == "__main__":
