@@ -14,5 +14,6 @@ class User(BaseModel):
     last_name = ''
 
     def __init__(self, *args, **kwargs):
-        """init"""
+        """initializing method which inherits
+        from the BaseModel init method"""
         super().__init__(*args, **kwargs)
