@@ -3,7 +3,6 @@
 """This is the base model of our AirBnB Project"""
 
 from datetime import datetime
-import time
 import uuid
 from models import storage
 
