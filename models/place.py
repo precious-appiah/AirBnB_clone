@@ -6,7 +6,8 @@ from .city import City
 
 
 class Place(City):
-    """class Place"""
+    """class Place which has the attributes
+    of an actual place on Airbnb"""
     city_id = ''
     user_id = ''
     name = ''
@@ -20,5 +21,6 @@ class Place(City):
     amenity_ids = ['']
 
     def __init__(self, *args, **kwargs):
-        """init"""
+        """initializing method which inherits
+        from the BaseModel init method"""
         super().__init__(*args, **kwargs)

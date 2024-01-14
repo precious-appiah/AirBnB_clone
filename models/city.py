@@ -7,10 +7,12 @@ from models.base_model import BaseModel
 
 
 class City(BaseModel):
-    """class City which inherits BaseModel"""
+    """class City which inherits BaseModel
+    class and defines a city"""
     state_id = ''
     name = ''
 
     def __init__(self, *args, **kwargs):
-        """init"""
+        """initializing method which inherits
+        from the BaseModel init method"""
         super().__init__(*args, **kwargs)

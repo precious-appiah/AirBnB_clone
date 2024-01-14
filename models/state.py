@@ -7,9 +7,11 @@ from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """class State"""
+    """class State which defines a state where
+    an Airbnb place will be based"""
     name = ''
 
     def __init__(self, *args, **kwargs):
-        """init"""
+        """initializing method which inherits
+        from the BaseModel init method"""
         super().__init__(*args, **kwargs)

@@ -12,7 +12,7 @@ class FileStorage():
     __objects = {}
 
     def all(self):
-        """Returns objects"""
+        """Returns objects in  a dictionary"""
         return self.__objects
 
     def new(self, obj):
