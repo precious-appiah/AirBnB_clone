@@ -3,7 +3,7 @@
 """Review module"""
 
 
-from place import Place
+from models.place import Place
 
 
 class Review(Place):
@@ -12,7 +12,6 @@ class Review(Place):
     user_id = ''
     text = ''
 
-    def __init__(self):
-        self.place_id = self.place_id
-        self.user_id = '' """to be updated before """
-        self.text = ''
+    def __init__(self, *args, **kwargs):
+        """init"""
+        super().__init__(*args, **kwargs)

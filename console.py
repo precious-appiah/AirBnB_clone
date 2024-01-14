@@ -1,15 +1,22 @@
 #!/usr/bin/python3
+# entry file
 """this is a console program"""
 
 import cmd
 from models import storage
 from models.base_model import BaseModel
 from models.user import User
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
 
 
 class HBNBCommand(cmd.Cmd):
     """class for hbnb command line"""
-    class_names = ['BaseModel', 'User']
+    class_names = ['BaseModel', 'User',
+                   'Amenity', 'City', 'Place', 'Review', 'State']
     __all_objects = []
     prompt = '(hbnb)'
 

@@ -3,13 +3,13 @@
 """this is a class state that inherits base class"""
 
 
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 
 class State(BaseModel):
     """class State"""
     name = ''
 
-    def __init__(self):
-        """initialization"""
-        self.name = ''
+    def __init__(self, *args, **kwargs):
+        """init"""
+        super().__init__(*args, **kwargs)
