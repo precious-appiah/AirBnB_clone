@@ -1,9 +1,6 @@
-<<<<<<< HEAD
 #!/usr/bin/env python3
 # this is our storage handling module
-=======
-#!/usr/bin/python3
->>>>>>> francis
+
 """This is our storage handling module"""
 import json
 import os
