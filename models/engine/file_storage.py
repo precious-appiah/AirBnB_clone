@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # this is our storage handling module
 
 """This is our storage handling module"""

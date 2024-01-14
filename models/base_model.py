@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # base model from which all other classes inherit
 """This is the base model of our AirBnB Project"""
 
