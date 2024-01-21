@@ -8,7 +8,7 @@ import os
 
 class FileStorage():
     """Handles json conversion"""
-    __path = 'storage_file.json'
+    __path = 'file.json'
     __objects = {}
 
     def all(self):
